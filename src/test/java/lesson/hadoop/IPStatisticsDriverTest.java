@@ -1,7 +1,7 @@
 package lesson.hadoop;
 
-import lesson.hadoop.IPStatisticsDriver.TotalCountMapper;
-import lesson.hadoop.IPStatisticsDriver.TotalCountReducer;
+import lesson.hadoop.Task3.TotalCountMapper;
+import lesson.hadoop.Task3.TotalCountReducer;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;

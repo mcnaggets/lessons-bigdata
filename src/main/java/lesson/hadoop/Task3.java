@@ -16,7 +16,7 @@ import org.apache.hadoop.util.ToolRunner;
 
 import java.io.IOException;
 
-public class IPStatisticsDriver extends Configured implements Tool {
+public class Task3 extends Configured implements Tool {
 
     public static final String GROUP_NAME = "browsers";
 
@@ -24,7 +24,7 @@ public class IPStatisticsDriver extends Configured implements Tool {
     public int run(String[] args) throws Exception {
         Job job = Job.getInstance(getConf());
         job.setJobName("IPStatistics example");
-        job.setJarByClass(IPStatisticsDriver.class);
+        job.setJarByClass(Task3.class);
 
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(TotalCountWritable.class);
@@ -90,7 +90,7 @@ public class IPStatisticsDriver extends Configured implements Tool {
         conf.set("mapreduce.output.fileoutputformat.compress", "true");
         conf.set("mapreduce.output.fileoutputformat.compress.codec",
                 SnappyCodec.class.getName());
-        int exitCode = ToolRunner.run(conf, new IPStatisticsDriver(), args);
+        int exitCode = ToolRunner.run(conf, new Task3(), args);
         System.exit(exitCode);
     }
 
