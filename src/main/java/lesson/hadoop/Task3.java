@@ -23,7 +23,7 @@ public class Task3 extends Configured implements Tool {
     @Override
     public int run(String[] args) throws Exception {
         Job job = Job.getInstance(getConf());
-        job.setJobName("IPStatistics example");
+        job.setJobName("Task3");
         job.setJarByClass(Task3.class);
 
         job.setMapOutputKeyClass(Text.class);

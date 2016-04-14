@@ -26,3 +26,11 @@ dependencies {
 jar {
     from configurations.releaseJars.collect { it.isDirectory() ? it : zipTree(it) }
 }
+
+task mapReduceClean(type: Exec, dependsOn: jar) {
+    commandLine 'hadoop', 'fs', '-rm', '-r', '/test0004/out'
+}
+
+task mapReduce(type: Exec, dependsOn: mapReduceClean) {
+    commandLine 'hadoop', 'jar', 'build/lib/lessons-bigdata-1.0-SNAPSHOT.jar', 'lesson.hadoop.Task4'
+}
